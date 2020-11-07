@@ -1,0 +1,14 @@
+.tag {
+  color: rgb(199, 186, 7);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.fab {
+  font-size: 24px;
+  cursor: pointer;
+}
