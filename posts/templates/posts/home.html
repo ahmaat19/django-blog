@@ -10,7 +10,9 @@
     <div class="col-lg-9 col-12 mt-5">
       {% include './latestPosts.html' with posts=posts %}
     </div>
-    <div class="col-lg-3 col-12 mt-5">{% include './sideBar.html' %}</div>
+    <div class="col-lg-3 col-12 mt-5">
+      {% include './sideBar.html' with categories=categories %}
+    </div>
   </div>
 </div>
 {% endblock content %}

@@ -1,131 +1,21 @@
 {% extends 'base.html' %} {{% load static %} {% block content %}
 
+<div class="container">
+  <h3 class="tag my-2 text-right">{{post.category|upper}}</h3>
+  <img src="{{post.image.url}}" class="card-img rounded" />
+  <h4 class="modal-title text-center pt-2 text-uppercase">{{post.title}}</h4>
 
+  <p class="card-text text-center text-muted">
+    <i class="fa fa-clock"></i>
+    {{ post.created|timesince }} ago
+  </p>
+  <p>{{post.content}}</p>
 
-    <div class="container">
-      <h3 class='tag my-2 text-right'>GUIDE, LIFESTYLE</h3>
-      <img
-        src="{{post.image.url}}"
-        class='card-img rounded'
-      />
-      <h4 class='modal-title text-center pt-2 text-uppercase'>
-        {{post.title}}
-      </h4>
-
-      <p class='card-text text-center text-muted'>
-      
-          <i class='fa fa-user'></i> Ahmed | <i class='fa fa-clock'></i>
-          {{ post.created|timesince }} ago |
-      
-      </p>
-      <p>
-       {{post.content}}
-      </p>
-      
-
-      <div class='g-5 my-5'>
-        <span class='badge btn btn-secondary rounded-pill m-2 py-1 px-2'>
-          #{{post.category}}
-        </span>
-       
-      </div>
-
-      <div class='row mb-5'>
-        <h5 class='text-muted mb-3'>Related Posts</h5> <hr />
-        <div class='col-lg-4 col-md-6 col-sm-6 col-12'>
-          <div class='card my-3'>
-            <img
-              src='https://darbi.org/wp-content/uploads/2018/09/maxresdefault-49.jpg'
-              alt='...'
-              class='card-img'
-            />
-            <div class='card-body'>
-              <span class='tag'>GUIDE, LIFESTYLE</span>
-              <Link to='/post-detail' class='card-link-title'>
-                <h5 class='card-title'>
-                  
-                  Theworldlinks 12 reasons to Say Yes to Travelling -
-                  Theworldlinks
-                </h5>
-              </Link>
-              <p class='card-text'>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <p class='card-text text-muted'>
-                
-                  <i class='fa fa-user'></i> Ahmed |
-                  <i class='fa fa-clock'></i> 3 mins ago |
-                  <i class='fa fa-comments'></i> 23
-               
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class='col-lg-4 col-md-6 col-sm-6 col-12'>
-          <div class='card my-3'>
-            <img
-              src='https://images.jdmagicbox.com/comp/def_content/treadmill-dealers/6-treadmill-dealers-5-9fob0.jpg?clr=#3d3d29'
-              alt='...'
-              class='card-img'
-            />
-            <div class='card-body'>
-              <span class='tag'>GUIDE, LIFESTYLE</span>
-              <Link to='/post-detail' class='card-link-title'>
-                <h5 class='card-title'>
-                  
-                  Theworldlinks 12 reasons to Say Yes to Travelling -
-                  Theworldlinks
-                </h5>
-              </Link>
-              <p class='card-text'>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <p class='card-text text-muted'>
-                
-                  <i class='fa fa-user'></i> Ahmed |
-                  <i class='fa fa-clock'></i> 3 mins ago |
-                  <i class='fa fa-comments'></i> 23
-               
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class='col-lg-4 col-md-6 col-sm-6 col-12'>
-          <div class='card my-3'>
-            <img
-              src='https://www.irishtimes.com/polopoly_fs/1.3144326.1499266095!/image/image.jpg_gen/derivatives/box_620_330/image.jpg'
-              alt='...'
-              class='card-img'
-            />
-            <div class='card-body'>
-              <span class='tag'>GUIDE, LIFESTYLE</span>
-              <Link to='/post-detail' class='card-link-title'>
-                <h5 class='card-title'>
-                  
-                  Theworldlinks 12 reasons to Say Yes to Travelling -
-                  Theworldlinks
-                </h5>
-              </Link>
-              <p class='card-text'>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <p class='card-text text-muted'>
-                
-                  <i class='fa fa-user'></i> Ahmed |
-                  <i class='fa fa-clock'></i> 3 mins ago |
-                  <i class='fa fa-comments'></i> 23
-               
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-     
-    </div>
-
-
+  <div class="g-5 my-5">
+    <span class="badge btn btn-secondary rounded-pill m-2 py-1 px-2">
+      #{{post.category}}
+    </span>
+  </div>
+</div>
 
 {% endblock content %}

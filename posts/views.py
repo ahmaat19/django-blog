@@ -7,6 +7,8 @@ from django.contrib import messages
 def index(request):
      
     post_lists = Post.objects.order_by('-id')
+    categories = Category.objects.order_by('-id')
+        
     featured_posts = Post.objects.order_by('-id')[:3]
 
     paginator = Paginator(post_lists, 4)  # Show 10 contacts per page
@@ -15,7 +17,8 @@ def index(request):
 
     context = {
         'posts': posts,
-        'featured_posts': featured_posts
+        'featured_posts': featured_posts,
+        'categories':categories
     }
     return render(request, 'posts/home.html', context)
 

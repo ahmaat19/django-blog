@@ -22,11 +22,11 @@
       <h5 class='text-muted'>Social Media</h5> <hr />
       <p>
         <div class='btn-group' role='group'>
-          <i class='fab fa-facebook'></i>
-          <i class='fab fa-twitter'></i>
-          <i class='fab fa-instagram'></i>
-          <i class='fab fa-google-plus'></i>
-          <i class='fab fa-linkedin'></i>
+          <a href="https://facebook.com/barocoding"> <i class='fab fa-facebook'></i></a>
+          <a href="https://twitter.com"><i class='fab fa-twitter'></i></a>
+           <a href="https://instagram.com"><i class='fab fa-instagram'></i></a>
+            <a href="https://google-plus.com"> <i class='fab fa-google-plus'></i></a>
+            <a href="https://linkein.com">  <i class='fab fa-linkedin'></i> </a>
         </div>
       </p>
     </div>
@@ -34,22 +34,17 @@
       <h5 class='text-muted'>Categories</h5> <hr />
       <p>
         <ul class='list-group'>
+          
+          {% for category in categories %}
           <li class='list-group-item d-flex justify-content-between align-items-center'>
-            BUSINESS
-            <span class='badge bg-secondary rounded-pill'>35</span>
+            {{category.name|upper}}
+            
           </li>
-          <li class='list-group-item d-flex justify-content-between align-items-center'>
-            DESIGN
-            <span class='badge bg-secondary rounded-pill'>9</span>
-          </li>
-          <li class='list-group-item d-flex justify-content-between align-items-center'>
-            LIFESTYLE
-            <span class='badge bg-secondary rounded-pill'>6</span>
-          </li>
-          <li class='list-group-item d-flex justify-content-between align-items-center'>
-            MOTIVATION
-            <span class='badge bg-secondary rounded-pill'>10</span>
-          </li>
+            
+          {% endfor %}
+            
+        
+  
         </ul>
       </p>
     </div>
