@@ -3,70 +3,33 @@
   <hr />
 
   <div class="row gy-4">
+    {% for post in featured_posts %}
+
     <div class="col-lg-4 col-md-6 col-sm-6 col-12">
       <div class="card">
-        <img
-          src="https://cdn.gillion.shufflehound.com/wp-content/uploads/sites/5/2017/01/Untitled-1_0006_andrew-neel-218073-300x200.jpg"
-          class="card-img-top"
-          alt="..."
-        />
+        <img src="{{post.image}}" class="card-img-top" alt="..." />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <span class="tag">{{post.category|upper}}</span>
+          <h5 class="card-title">
+            <a href="{% url 'posts:post-details' post.slug %}"
+              >{{post.title|title}}
+            </a>
+          </h5>
+          <p class="card-text">{{post.content|truncatewords:10}}</p>
           <p class="card-text text-muted">
-            <i class="fa fa-user"></i> Ahmed | <i class="fa fa-clock"></i> 3
-            mins ago | <i class="fa fa-comments"></i> 23
+            <i class="fa fa-user"></i> Ahmed | <i class="fa fa-clock"></i>
+            {{ post.created|timesince }} ago
           </p>
 
-          <a href="#" class="btn btn-outline-light">Read more...</a>
+          <a
+            href="{% url 'posts:post-details' post.slug %}"
+            class="btn btn-outline-light"
+            >Read more...</a
+          >
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-      <div class="card">
-        <img
-          src="https://cdn.gillion.shufflehound.com/wp-content/uploads/sites/5/2017/01/Untitled-1_0006_andrew-neel-218073-300x200.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
 
-          <p class="card-text text-muted">
-            <i class="fa fa-user"></i> Ahmed | <i class="fa fa-clock"></i> 3
-            mins ago | <i class="fa fa-comments"></i> 23
-          </p>
-          <a href="#" class="btn btn-outline-light">Read more...</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-      <div class="card">
-        <img
-          src="https://cdn.gillion.shufflehound.com/wp-content/uploads/sites/5/2017/01/Untitled-1_0006_andrew-neel-218073-300x200.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <p class="card-text text-muted">
-            <i class="fa fa-user"></i> Ahmed | <i class="fa fa-clock"></i> 3
-            mins ago | <i class="fa fa-comments"></i> 23
-          </p>
-          <a href="#" class="btn btn-outline-light">Read more...</a>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
