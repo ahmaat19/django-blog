@@ -26,6 +26,16 @@
             class="btn btn-outline-light"
             >Read more...</a
           >
+          <a
+          href="{% url 'posts:post-update' post.pk %}"
+          class="btn btn-outline-success"
+          ><i class="fa fa-pen"></i></a
+        >
+        <a
+        href="{% url 'posts:post-update' post.pk %}"
+        class="btn btn-outline-danger"
+        ><i class="fa fa-trash"></i></a
+      >
         </div>
       </div>
     </div>

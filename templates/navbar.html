@@ -25,10 +25,13 @@
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="#">Add Category</a>
+          <a class="nav-link" href="{% url 'posts:category' %}">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Add New Post</a>
+          <a class="nav-link" href="{% url 'posts:category-create' %}">Add Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'posts:post-create' %}">Add New Post</a>
         </li>
         {%endif%}
       </ul>
