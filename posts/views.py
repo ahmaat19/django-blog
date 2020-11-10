@@ -72,7 +72,7 @@ def CategoryUpdateView(request, pk):
     return render(request, 'posts/category-form.html', context) 
 
 
-
+@login_required
 def CategoryViewList(request):
     cat = Category.objects.order_by('-id')
     paginator = Paginator(cat, 4)  # Show 10 contacts per page
@@ -122,3 +122,19 @@ def PostUpdateView(request, pk):
         'title': 'Update Post',
     }
     return render(request, 'posts/post-form.html', context) 
+
+
+@login_required
+def PostDeleteView(request, pk):
+    query = get_object_or_404(Post, pk=pk)
+    query.delete()
+    messages.success(request, 'Post deleted successfully.')
+    return redirect('/')
+
+
+@login_required
+def CategoryDeleteView(request, pk):
+    query = get_object_or_404(Category, pk=pk)
+    query.delete()
+    messages.success(request, 'Category deleted successfully.')
+    return redirect('/category/')
